@@ -13,11 +13,17 @@ const morganOption = (NODE_ENV === 'production')
 
 app.use(morgan(morganOption))
 app.use(helmet())
-app.use(cors())
+const {CLIENT_ORIGIN} = require('./config');
 
 app.get('/', (req, res) => {
   res.send('Hello, world!')
 })
+
+app.use(
+  cors({
+      origin: CLIENT_ORIGIN
+  })
+);
 
 app.use(function errorHandler(error, req, res, next) {
   let response
