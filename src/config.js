@@ -4,5 +4,5 @@ module.exports = {
   DATABASE_URL: process.env.DATABASE_URL || 'postgresql://tsputzke@localhost/bricks_and_builds',
   // JWT_SECRET: process.env.JWT_SECRET || 'change-this-secret',
   // JWT_EXPIRY: process.env.JWT_EXPIRY || '5h',
-  // "ssl": true,
+  "ssl": true,
 }
