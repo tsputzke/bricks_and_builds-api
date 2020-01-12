@@ -21,15 +21,16 @@
     "express": "^4.17.1",
     "helmet": "^3.21.2",
     "knex": "^0.20.7",
+    "mem": "^6.0.1",
     "morgan": "^1.9.1",
     "npm": "^6.13.6",
     "pg": "^7.17.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.2.0",
+    "mocha": "^6.2.2",
     "nodemon": "^1.19.4",
-    "postgrator-cli": "^3.2.0",
+    "postgrator-cli": "^3.3.0",
     "supertest": "^4.0.2"
   }
 }
