@@ -6,6 +6,8 @@ const helmet = require('helmet')
 const { NODE_ENV } = require('./config')
 
 const UsersRouter = require('./users/users-router')
+const FavoritesRouter = require('./favorites/favorites-router')
+const InventoryRouter = require('./inventory/inventory-router')
 
 const app = express()
 
@@ -18,6 +20,8 @@ app.use(helmet())
 app.use(cors())
 
 app.use('/api/users', UsersRouter)
+app.use('/api/favorites', FavoritesRouter)
+app.use('/api/inventory', InventoryRouter)
 
 app.get('/', (req, res) => {
   res.send('Hello, world!')

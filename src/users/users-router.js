@@ -1,7 +1,6 @@
 const express = require('express')
 const UsersService = require('./users-service')
 const path = require('path')
-const { requireAuth } = require('../middleware/jwt-auth')
 
 const usersRouter = express.Router()
 const jsonBodyParser = express.json()
