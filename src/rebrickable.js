@@ -20,9 +20,7 @@ rebrickable
           })
           // If call is successful
           .then(response => response.json())
-          .then( response => {
-            response.set_num ? res.send(response) : res.send('Invalid set number, try again')
-          })
+          .then( response => { res.send(response) })
           // If call fails
           .catch(err => console.log(err))
     }
