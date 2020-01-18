@@ -11,7 +11,7 @@ const serializeFavorite = favorite => ({
   user_id: favorite.user_id,
   set_name: favorite.set_name,
   image_url: favorite.image_url,
-  build_url: favorite.build_url
+  set_num: favorite.set_num
 })
 
   // Get all favorites belonging to a user, by user_id
@@ -47,8 +47,8 @@ favoritesRouter
       .catch(next)
   })
   .post(requireAuth, jsonParser, (req, res, next) => {
-    const { set_name, image_url, build_url } = req.body;
-    const newFavorite = { set_name, image_url, build_url };
+    const { set_name, image_url, set_num } = req.body;
+    const newFavorite = { set_name, image_url, set_num };
 
     for (const [key, value] of Object.entries(newFavorite)) {
       if (value == null) {

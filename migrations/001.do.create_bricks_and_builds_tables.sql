@@ -13,7 +13,7 @@ CREATE TABLE inventory (
   user_id INTEGER REFERENCES bricks_and_builds_users(user_id),
   set_name TEXT NOT NULL,
   image_url TEXT NOT NULL,
-  build_url TEXT NOT NULL
+  set_num TEXT NOT NULL
 );
 
 CREATE TABLE favorites (
@@ -21,5 +21,5 @@ CREATE TABLE favorites (
   user_id INTEGER REFERENCES bricks_and_builds_users(user_id),
   set_name TEXT NOT NULL,
   image_url TEXT NOT NULL,
-  build_url TEXT NOT NULL
+  set_num TEXT NOT NULL
 );

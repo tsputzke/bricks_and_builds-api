@@ -11,7 +11,7 @@ const serializeItem = item => ({
   user_id: item.user_id,
   set_name: item.set_name,
   image_url: item.image_url,
-  build_url: item.build_url
+  set_num: item.set_num
 })
 
   // Get all items belonging to a user, by user_id
@@ -34,7 +34,7 @@ inventoryRouter
     res.json(res.items)
   })
 
-// Add favorite
+// Add set to inventory
 inventoryRouter
   .route('/')
   .get((req, res, next) => {
@@ -47,8 +47,8 @@ inventoryRouter
       .catch(next)
   })
   .post(requireAuth, jsonParser, (req, res, next) => {
-    const { set_name, image_url, build_url } = req.body;
-    const newItem = { set_name, image_url, build_url };
+    const { set_name, image_url, set_num } = req.body;
+    const newItem = { set_name, image_url, set_num };
 
     for (const [key, value] of Object.entries(newItem)) {
       if (value == null) {

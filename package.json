@@ -28,7 +28,6 @@
     "node-fetch": "^2.6.0",
     "npm": "^6.13.6",
     "pg": "^7.17.1",
-    "request": "^2.88.0",
     "xss": "^1.0.6"
   },
   "devDependencies": {
