@@ -34,7 +34,7 @@ rebrickable
   .get((req, res) => {
     const searchTerm = req.params.searchTerm;
     function handleSetSearch(searchTerm) {
-      fetch(`https://rebrickable.com/api/v3/lego/sets/${searchTerm}-1/alternates`, {
+      fetch(`https://rebrickable.com/api/v3/lego/sets/${searchTerm}/alternates`, {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
@@ -44,7 +44,6 @@ rebrickable
           // If call is successful
           .then(response => response.json())
           .then( response => {
-            console.log(response)
             response.count ? res.send(response) : res.send('Invalid set number, try again')
           })
           // If call fails
