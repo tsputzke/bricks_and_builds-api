@@ -2,6 +2,8 @@
 const express = require('express')
 const path = require('path')
 const fetch = require('node-fetch');
+const { REBRICKABLE_API_KEY } = require('./config')
+
 
 const rebrickable = express.Router()
 
@@ -15,7 +17,7 @@ rebrickable
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': `key ${process.env.REBRICKABLE_API_KEY}`
+              'Authorization': `key ${REBRICKABLE_API_KEY}`
             }
           })
           // If call is successful
@@ -38,7 +40,7 @@ rebrickable
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': `key ${process.env.REBRICKABLE_API_KEY}`
+              'Authorization': `key ${REBRICKABLE_API_KEY}`
             }
           })
           // If call is successful
