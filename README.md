@@ -1,26 +1,158 @@
-# Express Boilerplate!
+# User
+Posts new user to 'bricks_and_builds_users' database. 
+Logs in existing user and returns JWT token and user_id.
 
-This is a boilerplate project used for starting new projects!
+## URL
 
-## Set up
+Route to post new user/ login:
+https://morning-inlet-85919.herokuapp.com/api/users [+ /login]
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+## Method:
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+POST
 
-## Scripts
+## URL Params
 
-Start the application `npm start`
+## Required:
 
-Start nodemon for the application `npm run dev`
+None
 
-Run the tests `npm test`
+## Data Params
 
-## Deploying
+None
 
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+## Success Response:
+
+Code: 201 Created
+
+## Error Response:
+
+Code: 400 Bad Request
+
+## Sample Call:
+
+  ```
+  fetch('https://morning-inlet-85919.herokuapp.com/api/users' [+ '/login'], {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({ user_name, password }),
+  });
+  ```
+
+# Favorites
+Return all favorites belonging to a user.
+Adds favorite to database.
+Deletes favorite from database.
+
+## URL
+
+Route to get favorites, by user_id (GET):
+https://morning-inlet-85919.herokuapp.com/api/rooms/:user_id
+
+Route to add favorite (POST):
+https://morning-inlet-85919.herokuapp.com/api/favorites
+
+Route to delete room, by favorites_id (DELETE):
+https://morning-inlet-85919.herokuapp.com/api/favorites/delete/:favorites_id
+
+## Method:
+
+GET / POST / DELETE
+
+## URL Params
+
+## Required:
+
+None
+
+## Data Params
+
+None
+
+## Success Response:
+
+New Favorite:
+Code: 201 Created
+
+Delete Favorite:
+Code: 204 No Content
+
+## Error Response:
+
+Code: 400 Bad Request
+
+# Inventory
+Return inventory data by user_id.
+Add inventory data from database.
+Deletes inventory data from database.
+
+## URL
+
+Route to get inventory data, by user_id (GET):
+https://morning-inlet-85919.herokuapp.com/api/inventory/:user_id
+
+Route to add inventory data (POST):
+https://morning-inlet-85919.herokuapp.com/api/inventory
+
+Route to delete inventory data, by inventory_id (DELETE):
+https://morning-inlet-85919.herokuapp.com/api/inventory/delete/:inventory_id
+
+## Method:
+
+GET / POST / DELETE
+
+## URL Params
+
+## Required:
+
+None
+
+## Data Params
+
+None
+
+## Success Response:
+
+New Inventory Data:
+Code: 201 Created
+
+Delete Inventory Data:
+Code: 204 No Content
+
+## Error Response:
+
+Code: 400 Bad Request
+
+# Rebrickable
+Return set info data by set_id.
+Return alternate build set info data by set_id.
+
+## URL
+
+Route to get inventory data, by user_id (GET):
+https://morning-inlet-85919.herokuapp.com/api/rebrickable/:searchTerm
+
+Route to add inventory data (POST):
+https://morning-inlet-85919.herokuapp.com/api/rebrickable/alternates/:searchTerm
+
+## Method:
+
+GET 
+
+## URL Params
+
+## Required:
+
+None
+
+## Data Params
+
+None
+
+## Success Response:
+
+## Error Response:
+
+Code: 400 Bad Request
