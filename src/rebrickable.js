@@ -17,7 +17,7 @@ rebrickable
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': `key ${REBRICKABLE_API_KEY}`
+              'Authorization': `key ${process.env.REBRICKABLE_API_KEY}`
             }
           })
           // If call is successful
@@ -40,7 +40,7 @@ rebrickable
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': `key ${REBRICKABLE_API_KEY}`
+              'Authorization': `key ${process.env.REBRICKABLE_API_KEY}`
             }
           })
           // If call is successful
