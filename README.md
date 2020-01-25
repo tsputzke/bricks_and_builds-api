@@ -49,12 +49,12 @@ Deletes favorite from database.
 ## URL
 
 Route to get favorites, by user_id (GET):
-https://morning-inlet-85919.herokuapp.com/api/rooms/:user_id
+https://morning-inlet-85919.herokuapp.com/api/favorites/:user_id
 
 Route to add favorite (POST):
 https://morning-inlet-85919.herokuapp.com/api/favorites
 
-Route to delete room, by favorites_id (DELETE):
+Route to delete favorite, by favorites_id (DELETE):
 https://morning-inlet-85919.herokuapp.com/api/favorites/delete/:favorites_id
 
 ## Method:
